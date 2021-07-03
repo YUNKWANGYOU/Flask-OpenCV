@@ -6,9 +6,11 @@ import cv2
 app = Flask(__name__)
 camera = cv2.VideoCapture(0)
 
+
 def gen_frames():
     while True:
         success, frame = camera.read()  # read the camera frame
+        # success = cv2.resize(success,dsize = 200)
         if not success:
             break
         else:
